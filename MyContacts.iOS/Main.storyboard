@@ -1,25 +1,286 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
-	<dependencies>
-		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204" />
-	</dependencies>
-	<scenes>
-		<!--View Controller-->
-		<scene sceneID="tne-QT-ifu">
-			<objects>
-				<viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-					<layoutGuides>
-						<viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" />
-						<viewControllerLayoutGuide type="bottom" id="wfy-db-euE" />
-					</layoutGuides>
-					<view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-						<rect key="frame" x="0.0" y="0.0" width="600" height="600" />
-						<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-						<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
-					</view>
-				</viewController>
-				<placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder" />
-			</objects>
-		</scene>
-	</scenes>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="13">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="3">
+            <objects>
+                <tableViewController id="4" sceneMemberID="viewController" customClass="ContactListTableViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="9">
+                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9" id="10">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                                            <rect key="frame" x="20" y="11" width="78" height="78"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="78" id="24"/>
+                                                <constraint firstAttribute="width" secondItem="21" secondAttribute="height" multiplier="1:1" id="25"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="24"/>
+                                                    <exclude reference="25"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="24"/>
+                                                    <include reference="25"/>
+                                                </mask>
+                                                <rect key="frame" x="20" y="11" width="78" height="78"/>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26">
+                                            <rect key="frame" x="108" y="11" width="247" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="30"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="30"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="30"/>
+                                                </mask>
+                                                <rect key="frame" x="108" y="11" width="247" height="30"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username@example.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31">
+                                            <rect key="frame" x="108" y="49" width="247" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="21" firstAttribute="centerY" secondItem="10" secondAttribute="centerY" id="22"/>
+                                        <constraint firstItem="21" firstAttribute="leading" secondItem="10" secondAttribute="leading" constant="20" id="23"/>
+                                        <constraint firstItem="26" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="10" id="27"/>
+                                        <constraint firstItem="26" firstAttribute="top" secondItem="10" secondAttribute="top" constant="11" id="28"/>
+                                        <constraint firstAttribute="trailing" secondItem="26" secondAttribute="trailing" constant="20" id="29"/>
+                                        <constraint firstItem="31" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="10" id="32"/>
+                                        <constraint firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="20" id="33"/>
+                                        <constraint firstItem="31" firstAttribute="top" secondItem="26" secondAttribute="bottom" constant="8" id="34"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="21"/>
+                                            <exclude reference="26"/>
+                                            <exclude reference="31"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="22"/>
+                                            <exclude reference="23"/>
+                                            <exclude reference="27"/>
+                                            <exclude reference="28"/>
+                                            <exclude reference="29"/>
+                                            <exclude reference="32"/>
+                                            <exclude reference="33"/>
+                                            <exclude reference="34"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="21"/>
+                                            <include reference="26"/>
+                                            <include reference="31"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="22"/>
+                                            <include reference="23"/>
+                                            <include reference="27"/>
+                                            <include reference="28"/>
+                                            <include reference="29"/>
+                                            <include reference="32"/>
+                                            <include reference="33"/>
+                                            <include reference="34"/>
+                                        </mask>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contactListEmailLabel" destination="31" id="name-outlet-31"/>
+                                    <outlet property="contactListNameLabel" destination="26" id="name-outlet-26"/>
+                                    <segue id="215" destination="43" kind="show" identifier="showDetails"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4" id="7"/>
+                            <outlet property="delegate" destination="4" id="8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contacts" id="5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eiP-2r-VnW">
+                            <connections>
+                                <segue destination="VYb-fN-cFx" kind="show" identifier="newContact" id="z1e-2z-yve"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="-11"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IEr-c6-h4u">
+            <objects>
+                <viewController id="VYb-fN-cFx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eKP-dz-iK6"/>
+                        <viewControllerLayoutGuide type="bottom" id="e0b-Be-zLw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bYd-gr-Fsx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twd-ee-Wdw">
+                                <rect key="frame" x="20" y="84" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-Ai-QXv">
+                                <rect key="frame" x="20" y="134" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYb-AT-JeH">
+                                <rect key="frame" x="20" y="184" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rYb-AT-JeH" secondAttribute="height" multiplier="1:1" id="zJR-4t-jI5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2ZH-Ai-QXv" firstAttribute="leading" secondItem="bYd-gr-Fsx" secondAttribute="leading" constant="20" id="EjL-X9-yL2"/>
+                            <constraint firstItem="Twd-ee-Wdw" firstAttribute="leading" secondItem="bYd-gr-Fsx" secondAttribute="leading" constant="20" id="FiS-tJ-VUT"/>
+                            <constraint firstItem="rYb-AT-JeH" firstAttribute="leading" secondItem="bYd-gr-Fsx" secondAttribute="leading" constant="20" id="H3F-LS-zhf"/>
+                            <constraint firstAttribute="trailing" secondItem="rYb-AT-JeH" secondAttribute="trailing" constant="20" id="Zt4-W4-c58"/>
+                            <constraint firstItem="rYb-AT-JeH" firstAttribute="top" secondItem="2ZH-Ai-QXv" secondAttribute="bottom" constant="20" id="aoa-UV-e18"/>
+                            <constraint firstItem="2ZH-Ai-QXv" firstAttribute="top" secondItem="Twd-ee-Wdw" secondAttribute="bottom" constant="20" id="efv-Xo-KN2"/>
+                            <constraint firstAttribute="trailing" secondItem="Twd-ee-Wdw" secondAttribute="trailing" constant="20" id="kUO-le-3b5"/>
+                            <constraint firstAttribute="trailing" secondItem="2ZH-Ai-QXv" secondAttribute="trailing" constant="20" id="p1g-Hw-AWc"/>
+                            <constraint firstItem="Twd-ee-Wdw" firstAttribute="top" secondItem="eKP-dz-iK6" secondAttribute="bottom" constant="20" id="yxW-O7-ZRI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Br-rl-3qz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841.6" y="-170.045"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="12">
+            <objects>
+                <navigationController id="13" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="15">
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4" kind="relationship" relationship="rootViewController" id="14"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407" y="-11"/>
+        </scene>
+        <scene sceneID="42">
+            <objects>
+                <viewController id="43" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="40"/>
+                        <viewControllerLayoutGuide type="bottom" id="41"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="44">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="217" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="91" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="20" y="20" width="335" height="335"/>
+                                    <mask key="constraints">
+                                        <include reference="221"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="221" firstAttribute="width" secondItem="217" secondAttribute="height" multiplier="1:1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="221"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="222" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="363" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="375" width="335" height="47"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="217"/>
+                                <exclude reference="222"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="218"/>
+                                <exclude reference="219"/>
+                                <exclude reference="220"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="217"/>
+                                <include reference="222"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="218"/>
+                                <include reference="219"/>
+                                <include reference="220"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="218" firstItem="217" firstAttribute="leading" secondItem="44" secondAttribute="leading" constant="20"/>
+                            <constraint id="219" firstItem="217" firstAttribute="top" secondItem="44" secondAttribute="top" constant="20"/>
+                            <constraint id="220" firstItem="44" firstAttribute="trailing" secondItem="217" secondAttribute="trailing" constant="20"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="562"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
 </document>
