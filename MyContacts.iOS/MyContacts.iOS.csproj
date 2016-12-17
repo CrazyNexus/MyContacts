@@ -97,26 +97,40 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Resources\Assets.xcassets\" />
+    <Folder Include="Controller\" />
+    <Folder Include="Cells\" />
+    <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ContactListTableViewController.cs" />
-    <Compile Include="ContactListTableViewController.designer.cs">
+    <Compile Include="Controller\ContactListTableViewController.cs" />
+    <Compile Include="Controller\ContactListTableViewController.designer.cs">
       <DependentUpon>ContactListTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\DetailsViewController.cs" />
+    <Compile Include="Controller\DetailsViewController.designer.cs">
+      <DependentUpon>DetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\ViewController.cs" />
+    <Compile Include="Controller\ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\ContactTableViewCell.cs" />
+    <Compile Include="Cells\ContactTableViewCell.designer.cs">
+      <DependentUpon>ContactTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AppDelegate.cs" />
+    <Compile Include="Common\Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Google Images Filled-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

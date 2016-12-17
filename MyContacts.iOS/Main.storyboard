@@ -12,15 +12,15 @@
             <objects>
                 <tableViewController id="4" sceneMemberID="viewController" customClass="ContactListTableViewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="9">
-                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="9" customClass="ContactTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9" id="10">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21">
@@ -120,6 +120,7 @@
                                     <outlet property="contactListEmailLabel" destination="31" id="name-outlet-31"/>
                                     <outlet property="contactListNameLabel" destination="26" id="name-outlet-26"/>
                                     <segue id="215" destination="43" kind="show" identifier="showDetails"/>
+                                    <outlet property="contactListImageView" destination="21" id="name-outlet-21"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -135,6 +136,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="eiP-2r-VnW" id="name-outlet-eiP-2r-VnW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,33 +147,49 @@
         <!--View Controller-->
         <scene sceneID="IEr-c6-h4u">
             <objects>
-                <viewController id="VYb-fN-cFx" sceneMemberID="viewController">
+                <viewController id="VYb-fN-cFx" sceneMemberID="viewController" customClass="ViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eKP-dz-iK6"/>
                         <viewControllerLayoutGuide type="bottom" id="e0b-Be-zLw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bYd-gr-Fsx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twd-ee-Wdw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twd-ee-Wdw">
                                 <rect key="frame" x="20" y="84" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-Ai-QXv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-Ai-QXv">
                                 <rect key="frame" x="20" y="134" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYb-AT-JeH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="231" translatesAutoresizingMaskIntoConstraints="NO" image="Google Images Filled-100.png">
+                                <rect key="frame" x="20" y="184" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="20" y="184" width="335" height="335"/>
+                                    <mask key="constraints">
+                                        <include reference="235"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="235" firstAttribute="width" secondItem="231" secondAttribute="height" multiplier="1:1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="235"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYb-AT-JeH">
                                 <rect key="frame" x="20" y="184" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rYb-AT-JeH" secondAttribute="height" multiplier="1:1" id="zJR-4t-jI5"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -183,8 +203,41 @@
                             <constraint firstAttribute="trailing" secondItem="Twd-ee-Wdw" secondAttribute="trailing" constant="20" id="kUO-le-3b5"/>
                             <constraint firstAttribute="trailing" secondItem="2ZH-Ai-QXv" secondAttribute="trailing" constant="20" id="p1g-Hw-AWc"/>
                             <constraint firstItem="Twd-ee-Wdw" firstAttribute="top" secondItem="eKP-dz-iK6" secondAttribute="bottom" constant="20" id="yxW-O7-ZRI"/>
+                            <constraint id="232" firstItem="231" firstAttribute="leading" secondItem="bYd-gr-Fsx" secondAttribute="leading" constant="20"/>
+                            <constraint id="233" firstItem="231" firstAttribute="top" secondItem="2ZH-Ai-QXv" secondAttribute="bottom" constant="20"/>
+                            <constraint id="234" firstItem="bYd-gr-Fsx" firstAttribute="trailing" secondItem="231" secondAttribute="trailing" constant="20"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="231"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="232"/>
+                                <exclude reference="233"/>
+                                <exclude reference="234"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="231"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="232"/>
+                                <include reference="233"/>
+                                <include reference="234"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem id="229" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="230" systemItem="save"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="230" id="name-outlet-230"/>
+                        <outlet property="fullNAmeTextField" destination="Twd-ee-Wdw" id="name-outlet-Twd-ee-Wdw"/>
+                        <outlet property="emailTextField" destination="2ZH-Ai-QXv" id="name-outlet-2ZH-Ai-QXv"/>
+                        <outlet property="imageButton" destination="rYb-AT-JeH" id="name-outlet-rYb-AT-JeH"/>
+                        <outlet property="photoImageView" destination="231" id="name-outlet-231"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Br-rl-3qz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +248,7 @@
             <objects>
                 <navigationController id="13" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="15">
-                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -204,17 +257,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-407" y="-11"/>
+            <point key="canvasLocation" x="-128" y="-9"/>
         </scene>
         <scene sceneID="42">
             <objects>
-                <viewController id="43" sceneMemberID="viewController">
+                <viewController id="43" sceneMemberID="viewController" customClass="DetailsViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="40"/>
                         <viewControllerLayoutGuide type="bottom" id="41"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
@@ -235,45 +288,111 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="222" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="222" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="363" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30" weight="semibold"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <rect key="frame" x="20" y="375" width="335" height="47"/>
+                                    <mask key="constraints">
+                                        <include reference="239"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="239" firstItem="222" firstAttribute="height" constant="47"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="239"/>
+                                    </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="245" translatesAutoresizingMaskIntoConstraints="NO" text="username@example.com">
+                                <rect key="frame" x="32" y="434" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="20" y="434" width="335" height="20.5"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="241" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="430" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="20" y="430" width="335" height="30"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="217"/>
                                 <exclude reference="222"/>
+                                <exclude reference="241"/>
+                                <exclude reference="245"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="218"/>
                                 <exclude reference="219"/>
                                 <exclude reference="220"/>
+                                <exclude reference="236"/>
+                                <exclude reference="237"/>
+                                <exclude reference="238"/>
+                                <exclude reference="242"/>
+                                <exclude reference="243"/>
+                                <exclude reference="244"/>
+                                <exclude reference="246"/>
+                                <exclude reference="247"/>
+                                <exclude reference="248"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="217"/>
                                 <include reference="222"/>
+                                <include reference="241"/>
+                                <include reference="245"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="218"/>
                                 <include reference="219"/>
                                 <include reference="220"/>
+                                <include reference="236"/>
+                                <include reference="237"/>
+                                <include reference="238"/>
+                                <include reference="242"/>
+                                <include reference="243"/>
+                                <include reference="244"/>
+                                <include reference="246"/>
+                                <include reference="247"/>
+                                <include reference="248"/>
                             </mask>
                         </variation>
                         <constraints>
                             <constraint id="218" firstItem="217" firstAttribute="leading" secondItem="44" secondAttribute="leading" constant="20"/>
                             <constraint id="219" firstItem="217" firstAttribute="top" secondItem="44" secondAttribute="top" constant="20"/>
                             <constraint id="220" firstItem="44" firstAttribute="trailing" secondItem="217" secondAttribute="trailing" constant="20"/>
+                            <constraint id="236" firstItem="222" firstAttribute="leading" secondItem="44" secondAttribute="leading" constant="20"/>
+                            <constraint id="237" firstItem="222" firstAttribute="top" secondItem="217" secondAttribute="bottom" constant="20"/>
+                            <constraint id="238" firstItem="44" firstAttribute="trailing" secondItem="222" secondAttribute="trailing" constant="20"/>
+                            <constraint id="242" firstItem="241" firstAttribute="leading" secondItem="44" secondAttribute="leading" constant="20"/>
+                            <constraint id="243" firstItem="241" firstAttribute="top" secondItem="222" secondAttribute="bottom" constant="8"/>
+                            <constraint id="244" firstItem="44" firstAttribute="trailing" secondItem="241" secondAttribute="trailing" constant="20"/>
+                            <constraint id="246" firstItem="245" firstAttribute="leading" secondItem="44" secondAttribute="leading" constant="20"/>
+                            <constraint id="247" firstItem="245" firstAttribute="top" secondItem="222" secondAttribute="bottom" constant="12"/>
+                            <constraint id="248" firstItem="44" firstAttribute="trailing" secondItem="245" secondAttribute="trailing" constant="20"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="detailsPhotoImageView" destination="217" id="name-outlet-217"/>
+                        <outlet property="detailsNameLabel" destination="222" id="name-outlet-222"/>
+                        <outlet property="emailButton" destination="241" id="name-outlet-241"/>
+                        <outlet property="detailsEmailLabel" destination="245" id="name-outlet-245"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,4 +402,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina47"/>
     </simulatedMetricsContainer>
+    <resources>
+        <image name="Google Images Filled-100.png" width="100" height="100"/>
+    </resources>
 </document>
