@@ -1,4 +1,11 @@
-﻿using Foundation;
+﻿//
+// AppDelegate.cs
+//
+// Created by Thomas Dubiel on 17.12.2016
+// Copyright 2016 Thomas Dubiel. All rights reserved.
+//
+using System.Collections.Generic;
+using Foundation;
 using UIKit;
 
 namespace MyContacts.iOS
@@ -8,6 +15,8 @@ namespace MyContacts.iOS
 	[Register("AppDelegate")]
 	public class AppDelegate : UIApplicationDelegate
 	{
+		public List<Contact> contactList = new List<Contact>();
+
 		// class-level declarations
 
 		public override UIWindow Window

@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Common\AppDelegate.cs" />
     <Compile Include="Common\Main.cs" />
+    <Compile Include="Contact.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Google Images Filled-100.png" />
