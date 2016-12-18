@@ -12,7 +12,7 @@ namespace MyContacts.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		//UIImagePickerController imagePickerController;
+		UIImagePickerController imagePickerController;
 
 		protected ViewController(IntPtr handle) : base(handle)
 		{
@@ -51,15 +51,16 @@ namespace MyContacts.iOS
 
 		void ImageButton_TouchUpInside(object sender, EventArgs e)
 		{
-			UIImagePickerController imagePickerController = new UIImagePickerController();
+			imagePickerController = new UIImagePickerController();
 
 			imagePickerController.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
 			imagePickerController.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+			imagePickerController.AllowsEditing = true;
 
 			imagePickerController.Canceled += ImagePickerController_Canceled;
 			imagePickerController.FinishedPickingMedia += ImagePickerController_FinishedPickingMedia;
 
-			//this.PresentViewController(imagePickerController, true, null);
+
 			this.NavigationController.PresentViewController(imagePickerController, true, null);
 		}
 
@@ -67,12 +68,12 @@ namespace MyContacts.iOS
 		{
 			photoImageView.Image = e.EditedImage;
 
-			//imagePickerController.DismissViewController(true, null);
+			imagePickerController.DismissViewController(true, null);
 		}
 
 		void ImagePickerController_Canceled(object sender, EventArgs e)
 		{
-			//imagePickerController.DismissModalViewController(true);
+			imagePickerController.DismissViewController(true, null);
 		}
 	}
 }
