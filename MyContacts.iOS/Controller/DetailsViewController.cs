@@ -7,6 +7,8 @@
 using Foundation;
 using System;
 using UIKit;
+using MessageUI;
+using System.Linq;
 
 namespace MyContacts.iOS
 {
@@ -31,7 +33,21 @@ namespace MyContacts.iOS
 
 		void EmailButton_TouchUpInside(object sender, EventArgs e)
 		{
+			if (MFMailComposeViewController.CanSendMail)
+			{
+				var emailController = new MFMailComposeViewController();
+				var recp = new string[] { detailsEmailLabel.Text };
+				emailController.SetToRecipients(recp);
+				emailController.SetSubject("testmail");
+				emailController.Finished += EmailController_Finished;
 
+				PresentViewController(emailController, true, null);
+			}
+		}
+
+		void EmailController_Finished(object sender, MFComposeResultEventArgs e)
+		{
+			e.Controller.DismissViewController(true, null);
 		}
 	}
 }

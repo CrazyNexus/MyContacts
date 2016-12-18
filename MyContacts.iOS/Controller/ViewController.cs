@@ -12,6 +12,8 @@ namespace MyContacts.iOS
 {
 	public partial class ViewController : UIViewController
 	{
+		//UIImagePickerController imagePickerController;
+
 		protected ViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -49,7 +51,28 @@ namespace MyContacts.iOS
 
 		void ImageButton_TouchUpInside(object sender, EventArgs e)
 		{
+			UIImagePickerController imagePickerController = new UIImagePickerController();
 
+			imagePickerController.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+			imagePickerController.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+
+			imagePickerController.Canceled += ImagePickerController_Canceled;
+			imagePickerController.FinishedPickingMedia += ImagePickerController_FinishedPickingMedia;
+
+			//this.PresentViewController(imagePickerController, true, null);
+			this.NavigationController.PresentViewController(imagePickerController, true, null);
+		}
+
+		void ImagePickerController_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
+		{
+			photoImageView.Image = e.EditedImage;
+
+			//imagePickerController.DismissViewController(true, null);
+		}
+
+		void ImagePickerController_Canceled(object sender, EventArgs e)
+		{
+			//imagePickerController.DismissModalViewController(true);
 		}
 	}
 }
